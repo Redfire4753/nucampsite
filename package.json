@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm run clean && npm run imagemin && npm run copyfonts && npm run usemin",
     "lite": "lite-server",
     "start": "npm run watch:all",
     "scss": "node-sass -o css/ css/",
@@ -12,7 +13,6 @@
     "watch:all": "parallelshell \"npm run watch:scss\" \"npm run lite\"",
     "usemin": "usemin contactus.html -d dist --htmlmin -o dist/contactus.html && usemin aboutus.html -d dist --htmlmin -o dist/aboutus.html && usemin index.html -d dist --htmlmin -o dist/index.html",
     "clean": "rimraf dist",
-    "build": "npm run clean && npm run imagemin && npm run copyfonts && npm run usemin",
     "imagemin": "imagemin img/* -o dist/img",
     "copyfonts": "copyfiles -f node_modules/font-awesome/fonts/* dist/fonts"
   },
